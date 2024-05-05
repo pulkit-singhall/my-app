@@ -9,7 +9,7 @@ export default class ApiResponse{
         success: boolean,
         message: string,
         data: any,
-        error: any
+        error?: any
     ) {
         this.success = success
         this.status = status
