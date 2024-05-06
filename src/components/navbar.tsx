@@ -6,10 +6,10 @@
 
 import SocialCom from "./socialCom"
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 export default function Navbar() {
     const linkedIn = "https://www.linkedin.com/in/pulkit-singhal-a8113822a"
@@ -22,47 +22,49 @@ export default function Navbar() {
         <div
             id="navbar"
             className="fixed top-[65px] flex z-75">
-            <Popover>
-                <PopoverTrigger asChild>
+            <HoverCard
+                openDelay={200}
+                closeDelay={200}>
+                <HoverCardTrigger asChild>
                     <button
-                        className="text-black m-2 px-3 py-1 rounded-full bg-white">
+                        className="text-black m-2 px-5 py-1 rounded-full bg-white">
                         <p
                             className="p-1">
-                            SOCIALS &#9759;
+                            <b>SOCIALS &#9759;</b>
                         </p>
                     </button>
-                </PopoverTrigger>
-                <PopoverContent>
+                </HoverCardTrigger>
+                <HoverCardContent>
                     <div
-                        className="flex flex-col items-center justify-evenly">
+                        className="flex flex-col items-center justify-evenly bg-white">
                         <SocialCom
                             href={linkedIn}
                             title={"LinkedIn"}
-                            image={"/linkedin.png"}
+                            image={"/assets/linkedin.png"}
                         />
                         <SocialCom
                             href={leetcode}
                             title={"Leetcode"}
-                            image={"/leetcode.svg"}
+                            image={"/assets/leetcode.svg"}
                         />
                         <SocialCom
                             href={github}
                             title={"GitHub"}
-                            image={"/github.png"}
+                            image={"/assets/github.png"}
                         />
                         <SocialCom
                             href={twitter}
                             title={"Twitter"}
-                            image={"/twitter.png"}
+                            image={"/assets/twitter.png"}
                         />
                         <SocialCom
                             href={instagram}
                             title={"Instagram"}
-                            image={"/instagram.png"}
+                            image={"/assets/instagram.png"}
                         />
                     </div>
-                </PopoverContent>
-            </Popover>
+                </HoverCardContent>
+            </HoverCard>
         </div>
     )
 }

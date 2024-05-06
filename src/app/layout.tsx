@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 	description: `Pulkit Singhal's Portfolio`,
 	icons: {
 		icon: {
-			url: "/next.svg",
+			url: "/assets/next.svg",
 			type: "image/svg",
 		},
-		shortcut: { url: "/next.svg", type: "image/svg" },
+		shortcut: { url: "/assets/next.svg", type: "image/svg" },
 	},
 };
 
