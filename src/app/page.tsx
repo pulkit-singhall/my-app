@@ -1,5 +1,4 @@
 'use client'
-import { AuroraBackground } from "@/components/ui/aurora-background"
 import About from "@/views/about"
 import Contact from "@/views/contact";
 import Tech from "@/views/tech";
@@ -9,14 +8,14 @@ import Navbar from "@/components/navbar";
 
 export default function Home() {
 	return (
-		<AuroraBackground
-			className="flex flex-col items-center">
+		<div
+			className="flex flex-col justify-evenly items-center bg-neutral-900">
 			<Navbar />
 			<About />
 			<Education />
 			<Tech />
 			<Project />
 			<Contact />
-		</AuroraBackground>
+		</div>
 	)
 }

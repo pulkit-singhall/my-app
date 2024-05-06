@@ -38,7 +38,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className="dark:text-white opacity-0"
             >
               {word}{" "}
             </motion.span>
@@ -52,7 +52,7 @@ export const TextGenerateEffect = ({
     <div className={cn("font-bold", className)}>
       <div className="mt-5">
         <div
-          className={`dark:text-white text-black text-3xl leading-snug tracking-wide 
+          className={`dark:text-white text-zinc-300 text-4xl leading-snug tracking-wide 
           ${oswald.className}`}>
           {renderWords()}
         </div>
