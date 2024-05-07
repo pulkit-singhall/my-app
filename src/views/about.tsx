@@ -22,7 +22,7 @@ export default function About() {
 
     return (
         <div
-            id="about"
+            id="home"
             className="flex flex-col items-center justify-evenly p-10 my-28 px-36 w-screen">
             <div
                 className="flex flex-col items-start mb-3">
@@ -31,7 +31,9 @@ export default function About() {
                     bg-gradient-to-b from-white to-pink-300 bg-clip-text 
                     text-transparent
                     text-center ${styles.name}`}>
-                    <b>Pulkit Singhal</b>
+                    <b>
+                        Pulkit Singhal
+                    </b>
                 </p>
                 <div>
                     <TextGenerateEffect words={description} />

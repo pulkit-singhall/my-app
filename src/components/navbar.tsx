@@ -21,13 +21,14 @@ export default function Navbar() {
     return (
         <div
             id="navbar"
-            className="sticky top-[65px] flex z-10000 overflow-hidden">
+            className="fixed top-10 flex bg-transparent 
+            backdrop-blur-[4px] rounded-full">
             <HoverCard
                 openDelay={200}
                 closeDelay={200}>
                 <HoverCardTrigger asChild>
                     <button
-                        className="text-black m-2 px-5 py-1 rounded-full bg-white">
+                        className="text-pink-600 m-1 px-2 bg-transparent">
                         <p
                             className="p-1">
                             <b>SOCIALS &#9759;</b>
@@ -36,7 +37,7 @@ export default function Navbar() {
                 </HoverCardTrigger>
                 <HoverCardContent>
                     <div
-                        className="flex flex-col items-center justify-evenly bg-white z-100">
+                        className="flex flex-col items-center justify-evenly bg-white">
                         <SocialCom
                             href={linkedIn}
                             title={"LinkedIn"}

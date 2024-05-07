@@ -1,0 +1,29 @@
+@media (max-width: 950px){
+    .card{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+@media (max-width: 950px){
+    .disp{
+        align-items: center;
+    }
+}
+
+@media (max-width: 700px){
+    .card{
+        padding-right: 0px;
+    }
+    .disp{
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 75%;
+    }
+    .title{
+        font-size: 30px;
+    }
+    .description{
+        font-size: 15px
+    }
+}

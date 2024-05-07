@@ -5,6 +5,7 @@ import Tech from "@/views/tech";
 import Education from "@/views/education";
 import Project from "@/views/project";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function Home() {
 	return (
@@ -15,8 +16,9 @@ export default function Home() {
 			<About />
 			{/* <Education /> */}
 			<Tech />
-			{/* <Project /> */}
+			<Project />
 			<Contact />
+			<Footer/>
 		</div>
 	)
 }

@@ -11,18 +11,6 @@ const oswald = Oswald({
 
 export default function Tech() {
 
-    let divRef = useRef<HTMLDivElement>(null)
-    let inView = useInView(divRef)
-    let animate = useAnimation()
-
-    useEffect(() => {
-        if (inView) {
-            animate.start('visible')
-        }
-     }, [
-        inView
-    ])
-
     const languages: string[] = ['C++', 'Javascript', 'Typescript', 'Golang',]
     
     const frontend: string[] = ['HTML', 'CSS', 'Tailwind CSS', 'React JS',
@@ -88,27 +76,19 @@ export default function Tech() {
     }
 
     return (
-        <motion.div
-            ref={divRef}
-            variants={
-                {
-                    "hidden": { opacity: 0 },
-                    "visible": {opacity: 1}
-                }
-            }
-            initial="hidden"
-            animate={animate}
-            transition={{duration: 2, delay: 0.25}}
+        <div
             id="tech"
-            className="flex flex-col items-center bg-neutral-900
-            w-auto h-auto px-2 py-5 mb-40 mt-16 mx-0 rounded-[40px] pb-10">
+            className="flex flex-col items-center
+            w-auto h-auto px-2 py-5 mb-20 mt-8 mx-0 rounded-[40px] pb-10">
             <p
-                className={`text-white text-6xl mb-10 py-5 ${oswald.className}`}>
-                <b>Skills</b>
+                className={`text-white text-6xl mb-7 py-5 ${oswald.className}`}>
+                <b>
+                    <u>Skills</u>
+                </b>
             </p>
             <div className={`grid grid-cols-3 ${styles.grid}`}>
                 {indTechCard}
             </div>
-        </motion.div>
+        </div>
     )
 }
