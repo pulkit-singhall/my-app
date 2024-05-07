@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Oswald } from "next/font/google";
+import styles from "../../styles/About.module.css"
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -53,7 +54,7 @@ export const TextGenerateEffect = ({
       <div className="mt-5">
         <div
           className={`dark:text-white text-pink-600 text-4xl leading-snug tracking-wide 
-          ${oswald.className}`}>
+          ${oswald.className} ${styles.generateText}`}>
           {renderWords()}
         </div>
       </div>

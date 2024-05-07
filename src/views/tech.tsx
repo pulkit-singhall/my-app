@@ -1,50 +1,114 @@
-import TechComponent from "@/components/techCom"
-import { Bitter } from "next/font/google"
+import { Oswald } from "next/font/google";
+import TechCard from "@/components/techCard";
 import styles from "../styles/Tech.module.css"
+import { motion, useAnimation, useInView } from "framer-motion"
+import { useEffect, useRef } from "react";
 
-const bitter = Bitter({
-    subsets: ['latin'],
-    weight: "900"
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: "600"
 })
 
 export default function Tech() {
-    const frontend: string[] = ['HTML', 'CSS', 'Javascript', 'Tailwind CSS', 'React JS',
+
+    let divRef = useRef<HTMLDivElement>(null)
+    let inView = useInView(divRef)
+    let animate = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+            animate.start('visible')
+        }
+     }, [
+        inView
+    ])
+
+    const languages: string[] = ['C++', 'Javascript', 'Typescript', 'Golang',]
+    
+    const frontend: string[] = ['HTML', 'CSS', 'Tailwind CSS', 'React JS',
         'Next JS'
     ]
-    const backend: string[] = ['Node JS', 'Express', 'JWT', 'MongoDB', 'Golang',
-        'Postman', 'Typescript', 'Firebase'
+
+    const backend: string[] = ['Node JS', 'Express', 'JWT', 'MongoDB', 
+        'Postman', 'Firebase', 'AppWrite', 'Next JS'
     ]
-    const mobile: string[] = ['Flutter', 'Dart', 'Riverpod', 'Kotlin', 'AppWrite']
+
+    const mobile: string[] = ['Flutter', 'Dart', 'Riverpod',]
+
+    const core: string[] = ['Data Structures', 'Algorithms', 'OS', 'DBMS',
+        'OOPS', 'Comouter Networks'
+    ]
+
+    const future: string[] = ['AI', '3D Graphics', 'Advanced Backend',
+        'System Design'
+    ]
+
+    let techCards = [
+        {
+            title: 'Programming Languages',
+            image: '/assets/lang.png',
+            list: languages,
+        },
+        {
+            title: "Frontend",
+            image: "/assets/frontend.png",
+            list: frontend
+        },
+        {
+            title:"Backend",
+            image:"/assets/backend.png",
+            list: backend,
+        },
+        {
+            title:"App Development",
+            image:"/assets/mobile.png",
+            list: mobile,
+        },
+        {
+            title: 'Core Subjects',
+            image: '/assets/core.png',
+            list: core,
+        },
+        {
+            title: 'Future Things I want to learn',
+            list: future,
+            image: '/assets/future.png',
+        }
+    ]
+
+    let indTechCard = []
+    for (let i = 0; i < techCards.length; i++) {
+        indTechCard.push(
+            <TechCard
+                title={techCards[i].title}
+                image={techCards[i].image}
+                list={techCards[i].list}
+            />
+        )
+    }
 
     return (
-        <div
-            className="flex flex-col items-center justify-evenly py-16 my-28 mx-28
-            bg-pink-600 rounded-[40px] px-10"
-            id="tech">
+        <motion.div
+            ref={divRef}
+            variants={
+                {
+                    "hidden": { opacity: 0 },
+                    "visible": {opacity: 1}
+                }
+            }
+            initial="hidden"
+            animate={animate}
+            transition={{duration: 2, delay: 0.25}}
+            id="tech"
+            className="flex flex-col items-center bg-neutral-900
+            w-auto h-auto px-2 py-5 mb-40 mt-16 mx-0 rounded-[40px] pb-10">
             <p
-                className={`text-neutral-950 mb-4 p-1 text-5xl ${bitter.className}`}>
-                <b>
-                    Tech Stack
-                </b>
+                className={`text-white text-6xl mb-10 py-5 ${oswald.className}`}>
+                <b>Skills</b>
             </p>
-            <div
-                className={`flex flex-row items-start justify-around mt-4 ${styles.component}`}>
-                <TechComponent
-                    image={"/assets/frontend.png"}
-                    heading={"FRONTEND"}
-                    list = {frontend}
-                />
-                <TechComponent
-                    image={"/assets/backend.png"}
-                    heading={"BACKEND"}
-                    list = {backend}
-                />
-                <TechComponent
-                    image={"/assets/mobile.png"}
-                    heading={"APP DEVELOPMENT"}
-                    list = {mobile}
-                />
+            <div className={`grid grid-cols-3 ${styles.grid}`}>
+                {indTechCard}
             </div>
-        </div>
+        </motion.div>
     )
 }

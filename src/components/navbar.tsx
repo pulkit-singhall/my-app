@@ -21,7 +21,7 @@ export default function Navbar() {
     return (
         <div
             id="navbar"
-            className="fixed top-[65px] flex z-75">
+            className="sticky top-[65px] flex z-10000 overflow-hidden">
             <HoverCard
                 openDelay={200}
                 closeDelay={200}>
@@ -36,7 +36,7 @@ export default function Navbar() {
                 </HoverCardTrigger>
                 <HoverCardContent>
                     <div
-                        className="flex flex-col items-center justify-evenly bg-white">
+                        className="flex flex-col items-center justify-evenly bg-white z-100">
                         <SocialCom
                             href={linkedIn}
                             title={"LinkedIn"}

@@ -1,0 +1,23 @@
+@media (max-width: 800px){
+    .generateText{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 650px){
+    .generateText{
+        font-size: 24px;
+    }
+    .name{
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 500px){
+    .generateText{
+        font-size: 20px;
+    }
+    .name{
+        font-size: 45px;
+    }
+}

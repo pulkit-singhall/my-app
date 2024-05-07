@@ -9,12 +9,13 @@ import Navbar from "@/components/navbar";
 export default function Home() {
 	return (
 		<div
-			className="flex flex-col justify-evenly items-center bg-neutral-950">
+			className="flex flex-col justify-evenly items-center 
+			bg-neutral-950 m-0">
 			<Navbar />
 			<About />
-			<Education />
-			{/* <Tech /> */}
-			<Project />
+			{/* <Education /> */}
+			<Tech />
+			{/* <Project /> */}
 			<Contact />
 		</div>
 	)
