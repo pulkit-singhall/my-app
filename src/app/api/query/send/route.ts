@@ -3,6 +3,7 @@ import { NextRequest } from "next/server";
 import { querySchema } from "@/schemas/query";
 import Query from "@/models/query";
 import dbConnect from "@/db/db";
+import { sendEmail } from "@/lib/email";
 
 export async function POST(req: NextRequest): Promise<Response> {
     dbConnect.then((connection) => {})
@@ -32,6 +33,18 @@ export async function POST(req: NextRequest): Promise<Response> {
             content,
         })
         if (!query) {
+            return Response.json(
+                new ApiResponse(
+                    500,
+                    false,
+                    "Internal server error in sending the query!",
+                    {}
+                )
+            )
+        }
+        const emailRes = await sendEmail(email, name, content)
+        if (!emailRes.success) {
+            await Query.deleteOne({ _id: query._id })
             return Response.json(
                 new ApiResponse(
                     500,

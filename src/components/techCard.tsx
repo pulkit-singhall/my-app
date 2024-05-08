@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react";
@@ -30,8 +31,8 @@ export default function TechCard(
         indList.push(
             <div
                 key={skill}
-                className="m-1 p-1 border-black border-2 rounded-lg
-                px-2 text-neutral-950 text-center">
+                className="m-1 p-1 border-white border-2 rounded-lg
+                px-2 text-white text-center">
                 {skill}
             </div>
         )
@@ -52,7 +53,7 @@ export default function TechCard(
                 repeatType: 'loop'
             }}
             className="flex flex-col items-center justify-evenly
-            bg-neutral-200 m-5 rounded-2xl py-3 px-1">
+            bg-neutral-900 m-5 rounded-2xl py-3 px-1">
             <div className="flex flex-row justify-center items-center p-2">
                 <Image
                     className="mr-2"
@@ -62,8 +63,10 @@ export default function TechCard(
                     width={35}
                 />
                 <p
-                    className="text-black text-2xl ml-2">
-                    <b>{title}</b>
+                    className="text-pink-600 text-2xl ml-2">
+                    <b>
+                        <u>{title}</u>
+                    </b>
                 </p>
             </div>
             <div

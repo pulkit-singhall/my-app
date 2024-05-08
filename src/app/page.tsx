@@ -2,7 +2,6 @@
 import About from "@/views/about"
 import Contact from "@/views/contact";
 import Tech from "@/views/tech";
-import Education from "@/views/education";
 import Project from "@/views/project";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -14,7 +13,6 @@ export default function Home() {
 			bg-neutral-950 m-0">
 			<Navbar />
 			<About />
-			{/* <Education /> */}
 			<Tech />
 			<Project />
 			<Contact />
