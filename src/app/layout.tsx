@@ -10,11 +10,15 @@ export const metadata: Metadata = {
 	description: `Pulkit Singhal's Portfolio`,
 	icons: {
 		icon: {
-			url: "/assets/next.svg",
+			url: "/assets/meta.png",
 			type: "image/svg",
 		},
-		shortcut: { url: "/assets/next.svg", type: "image/svg" },
+		shortcut: {
+			url: "/assets/meta.png",
+			type: "image/svg"
+		},
 	},
+	
 };
 
 export default function RootLayout({
