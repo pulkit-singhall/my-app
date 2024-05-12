@@ -33,9 +33,7 @@ export default function Contact() {
                 </div>
             </div>
             <p className=" text-white text-[17px] m-2 p-2">
-                Made with <span className="text-red-600">
-                    &#9829;
-                </span> by Pulkit Singhal
+                © 2024 PULKIT SINGHAL. ALL RIGHTS RESERVED.
             </p>
         </div>
     )

@@ -29,7 +29,7 @@ export default function Project() {
 
     return (
         <div
-            className="flex flex-col items-center justify-evenly mt-16 mb-16
+            className="flex flex-col items-center justify-evenly mt-[2px] mb-16
             bg-neutral-950 px-2 py-[14px] rounded-[25px] pb-16"
             id="projects">
             <div>

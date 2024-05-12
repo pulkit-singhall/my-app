@@ -28,7 +28,7 @@ export default function Navbar() {
                 closeDelay={200}>
                 <HoverCardTrigger asChild>
                     <button
-                        className="text-pink-600 m-1 px-2 bg-transparent">
+                        className="text-white m-1 px-2 bg-transparent">
                         <p
                             className="p-1">
                             <b>SOCIALS &#9759;</b>

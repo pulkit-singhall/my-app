@@ -1,8 +1,6 @@
 import { Oswald } from "next/font/google";
 import TechCard from "@/components/techCard";
 import styles from "../styles/Tech.module.css"
-import { motion, useAnimation, useInView } from "framer-motion"
-import { useEffect, useRef } from "react";
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -68,6 +66,7 @@ export default function Tech() {
     for (let i = 0; i < techCards.length; i++) {
         indTechCard.push(
             <TechCard
+                key={techCards[i].title}
                 title={techCards[i].title}
                 image={techCards[i].image}
                 list={techCards[i].list}
@@ -79,11 +78,13 @@ export default function Tech() {
         <div
             id="tech"
             className="flex flex-col items-center
-            w-auto h-auto px-2 py-5 mb-20 mt-8 mx-0 rounded-[40px] pb-10">
+            w-auto h-auto px-2 py-5 mb-20 mt-[8px] mx-0 rounded-[40px] pb-10">
             <p
                 className={`text-white text-6xl mb-7 py-5 ${oswald.className}`}>
                 <b>
-                    <u>Skills</u>
+                    <u>
+                        Skills
+                    </u>
                 </b>
             </p>
             <div className={`grid grid-cols-3 ${styles.grid}`}>

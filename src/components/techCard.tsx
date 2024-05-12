@@ -31,7 +31,7 @@ export default function TechCard(
         indList.push(
             <div
                 key={skill}
-                className="m-1 p-1 border-white border-2 rounded-lg
+                className="m-1 p-1 border-white border-[0.5px] rounded-lg
                 px-2 text-white text-center">
                 {skill}
             </div>
@@ -50,13 +50,12 @@ export default function TechCard(
             animate={animate}
             transition={{
                 duration: 2, delay: 0.75,
-                repeatType: 'loop'
             }}
             className="flex flex-col items-center justify-evenly
-            bg-neutral-900 m-5 rounded-2xl py-3 px-1">
+            bg-neutral-900 m-5 rounded-2xl py-3 px-1 border-white border-[0.5px]">
             <div className="flex flex-row justify-center items-center p-2">
                 <Image
-                    className="mr-2"
+                    className="mr-2 h-auto w-auto"
                     src={image}
                     alt={"image"}
                     height={30}

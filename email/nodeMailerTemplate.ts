@@ -1,4 +1,5 @@
-export const nodeMailerTemplate = `<!doctype html>
+export function nodeMailerTemplate(name: string): string {
+  const template = `<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
   <head>
     <title>
@@ -123,7 +124,7 @@ export const nodeMailerTemplate = `<!doctype html>
               <tr>
                 <td align="left" style="font-size:0px;padding:15px 15px 15px 15px;word-break:break-word;">
                   
-      <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.5;text-align:left;color:#000000;"><p style="font-family: Ubuntu, sans-serif; font-size: 11px; text-align: left;"><span style="font-size: 26px;"><strong>Hello</strong></span></p>
+      <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.5;text-align:left;color:#000000;"><p style="font-family: Ubuntu, sans-serif; font-size: 11px; text-align: left;"><span style="font-size: 26px;"><strong>Hello ${name},</strong></span></p>
 <p style="font-family: Ubuntu, sans-serif; font-size: 11px; text-align: left;">&nbsp;</p>
 <p style="font-family: Ubuntu, sans-serif; font-size: 11px; text-align: left;">&nbsp;</p>
 <p style="font-family: Ubuntu, sans-serif; font-size: 11px; text-align: left;"><span style="font-size: 14px;">Thank you for taking out time to visit my Portfolio. Rest assured that I review all the messages I receive, and I will take your comments into consideration as I continue to make enhancements to my website.</span></p>
@@ -159,3 +160,5 @@ export const nodeMailerTemplate = `<!doctype html>
   </body>
 </html>
   `
+  return template
+}

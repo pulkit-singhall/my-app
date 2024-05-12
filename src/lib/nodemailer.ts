@@ -21,7 +21,8 @@ export async function sendNodeMail(name: string, email: string): Promise<ApiResp
             from: myEmail,
             to: email,
             subject: 'Response Collected',
-            html: nodeMailerTemplate,
+            text: 'Thanks for your valuable input',
+            html: nodeMailerTemplate(name),
         }
         await transport.sendMail(mailOptions)
         return new ApiResponse(

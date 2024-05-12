@@ -22,15 +22,14 @@ export default function About() {
 
     return (
         <div
-            id="home"
+            id="about"
             className="flex flex-col items-center justify-evenly p-10 my-28 px-36 w-screen">
             <div
                 className="flex flex-col items-start mb-3">
                 <p
-                    className={`text-7xl ${dance.className} mb-2 pr-5 pb-4
-                    bg-gradient-to-b from-white to-pink-300 bg-clip-text 
-                    text-transparent
-                    text-center ${styles.name}`}>
+                    className={`text-7xl mb-2 pr-5 pb-4 bg-gradient-to-b from-white to-pink-300 
+                    bg-clip-text text-transparent text-center
+                    ${styles.name} ${dance.className}`}>
                     <b>
                         Pulkit Singhal
                     </b>

@@ -45,7 +45,7 @@ export default function ProjectCard(
             animate={animate}
             transition={{ duration: 2, delay: 0.75 }}
             className={`flex flex-row bg-neutral-900 my-12 mt-3 rounded-lg justify-between 
-            ${oswald.className} px-8 py-5 ${styles.card}`}>
+            ${oswald.className} px-8 py-5 ${styles.card} border-white border-[0.5px]`}>
             <div className={`flex flex-col items-start w-[600px] justify-evenly 
             ${styles.disp} mr-5`}>
                 <p className={`text-[30px] text-pink-600 mb-3 ${oswald.className}
